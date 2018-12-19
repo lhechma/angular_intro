@@ -5,12 +5,9 @@ import { TextEditorComponent } from './text-editor.component';
   selector: 'app-root',
   template: `
   <h1 appColorSwitch>App Component</h1>
-  <p> Word Count: {{wordCount}}</p>
-  <app-text-editor (countEmitter)="updateWordCount($event)">
-  <div class="tester">
-  <button>Do you see me?</button>
-  </div>
+  <app-text-editor>
   </app-text-editor>
+  <p> In parent scope, Word Count is {{wordCount}}</p>
   <app-person-list></app-person-list>
   `,
   styles : [` h1 {

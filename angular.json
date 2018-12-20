@@ -24,7 +24,8 @@
               "src/data"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/css/bootstrap.superhero.css"
             ],
             "scripts": []
           },

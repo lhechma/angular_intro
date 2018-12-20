@@ -10,7 +10,7 @@ import { TextEditorComponent } from './text-editor.component';
     <li><a class='nav-link' [routerLink]="['/home']">Angular Showcase</a></li>
     <li><a class='nav-link' [routerLink]="['/people']">People</a></li>
     <li><a class='nav-link' [routerLink]="['/people-form']">Add person with Template form</a></li>
-    <li><a class='nav-link' [routerLink]="['/people']">Add person with Reactive form</a></li>
+    <li><a class='nav-link' [routerLink]="['/people-reactive-form']">Add person with Reactive form</a></li>
  </ul>
 </nav>
   <div class='container'>

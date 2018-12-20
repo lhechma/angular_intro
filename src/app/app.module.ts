@@ -11,6 +11,10 @@ import {ConvertToSpacePipe} from './shared/convert-to-space';
 import { HomeComponent } from './home.component';
 import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { CanActivate } from '@angular/router/src/utils/preactivation';
+import { AlwaysBlockGuard } from './shared/always-block.guard';
+import { PersonComponent } from './people/person.component';
 
 @NgModule({
   imports: [
@@ -19,7 +23,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     NgbModule,
     RouterModule.forRoot([
-      {path: 'people', component: PersonListComponent},
+      {path: 'people', component: PersonListComponent} ,
+      { path: 'people/:name', component: PersonComponent },
       { path: 'welcome', component: HomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
@@ -32,9 +37,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     ClickToSwitchDirective,
     PersonListComponent,
     ConvertToSpacePipe,
-    HomeComponent
+    HomeComponent,
+    PersonComponent
   ],
-
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

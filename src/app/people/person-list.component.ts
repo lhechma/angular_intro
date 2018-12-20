@@ -1,7 +1,7 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {PeopleServiceService} from './people-service.service';
 import {IPerson} from './person';
-import {Observable} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
 selector : 'app-person-list',
@@ -12,8 +12,13 @@ template : `
                <li *ngIf="person.champ">
                   {{person.name | convertToSpaces:'-'}} -> {{person.salary | currency:'CAD':'symbol':'1.2-2' }}
                </li>
+
+               <a [routerLink]= "person.name">
+                   Person {{person.name}}
+               </a>
                </ul>
            </div>
+          <button (click)="takeMeHome()">Take Me out of here </button>
           `,
 providers : [PeopleServiceService]
 })
@@ -30,7 +35,12 @@ export class PersonListComponent implements OnInit, OnDestroy {
   people: IPerson[] ;
   error: string;
 
-  constructor(private peopleService: PeopleServiceService) {}
+  constructor(private peopleService: PeopleServiceService, private router: Router) {}
+
+  takeMeHome() {
+    this.router.navigate(['']);
+   }
+
   ngOnDestroy(): void {
      console.log('destroyed');
   }
@@ -46,4 +56,6 @@ export class PersonListComponent implements OnInit, OnDestroy {
    setInput(input){
    this.myInput = input;
    }
+
+
 }

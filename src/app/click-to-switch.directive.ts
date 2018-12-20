@@ -11,7 +11,5 @@ export class ClickToSwitchDirective {
     }
 
     @HostListener('mouseover', ['$event'])
-    logEvent(event) {
-         console.log(event);
-    }
+    logEvent(event) {}
 }

@@ -1,0 +1,5 @@
+[
+  {"name": "Mike-Tyson", "champ": false, "salary": 2000.24},
+  {"name": "Ronaldo-Christiano", "champ": true, "salary": 2100.6588},
+  {"name": "Jordan-Micheal", "champ": true, "salary": 2200.24}
+]

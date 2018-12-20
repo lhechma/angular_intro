@@ -5,14 +5,17 @@ import { AppComponent } from './app.component';
 import {SummaryComponent} from './summary.component';
 import {TextEditorComponent} from './text-editor.component';
 import {ClickToSwitchDirective} from './click-to-switch.directive';
-import {PersonListComponent} from './person-list.component';
+import {PersonListComponent} from './people/person-list.component';
 import {FormsModule} from '@angular/forms';
 import {ConvertToSpacePipe} from './shared/convert-to-space';
+import { PeopleServiceService } from './people/people-service.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -22,7 +25,7 @@ import {ConvertToSpacePipe} from './shared/convert-to-space';
     PersonListComponent,
     ConvertToSpacePipe
   ],
-   providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

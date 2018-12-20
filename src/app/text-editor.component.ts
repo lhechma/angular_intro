@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output} from '@angular/core';
+import { Component, EventEmitter, Output, Inject, forwardRef} from '@angular/core';
 import {AppComponent} from './app.component';
 @Component({
   selector : 'app-text-editor',
@@ -8,7 +8,9 @@ import {AppComponent} from './app.component';
        `
 })
 export class TextEditorComponent {
-  constructor(private appComponent: AppComponent) {}
+
+  constructor(@Inject(forwardRef(() => AppComponent)) private  appComponent: AppComponent) {}
+
   countWords(event: Event) {
     const textArea = event.target as HTMLTextAreaElement;
     const count = (textArea.value.match(/\S+/g) || []).length;

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output, Inject, forwardRef} from '@angular/core';
-import {AppComponent} from './app.component';
+import {HomeComponent} from './home.component';
+
 @Component({
   selector : 'app-text-editor',
   template : `
@@ -9,19 +10,12 @@ import {AppComponent} from './app.component';
 })
 export class TextEditorComponent {
 
-  constructor(@Inject(forwardRef(() => AppComponent)) private  appComponent: AppComponent) {}
+  constructor(@Inject(forwardRef(() => HomeComponent)) homeComponent: HomeComponent) {}
 
   countWords(event: Event) {
     const textArea = event.target as HTMLTextAreaElement;
     const count = (textArea.value.match(/\S+/g) || []).length;
-     this.appComponent.updateWordCount(count);
+   //  this.homeComponent.updateWordCount(count);
   }
 
- // @Output() countEmitter = new EventEmitter<number>();
- //<textarea (keyup)="countWords($event)"></textarea>
-  /*countWords(event: Event) {
-    const textArea = event.target as HTMLTextAreaElement;
-    const count = (textArea.value.match(/\S+/g) || []).length;
-    this.countEmitter.emit(count);
-  }*/
 }

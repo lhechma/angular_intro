@@ -11,6 +11,7 @@ import {ConvertToSpacePipe} from './shared/convert-to-space';
 import { HomeComponent } from './home.component';
 import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { PersonFormComponent } from './people/person-form.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     RouterModule.forRoot([
       {path: 'people', component: PersonListComponent},
       { path: 'welcome', component: HomeComponent },
+      { path: 'people-form',  component: PersonFormComponent},
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ])
@@ -32,7 +34,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     ClickToSwitchDirective,
     PersonListComponent,
     ConvertToSpacePipe,
-    HomeComponent
+    HomeComponent,
+    PersonFormComponent
   ],
 
   bootstrap: [AppComponent]

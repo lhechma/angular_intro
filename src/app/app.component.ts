@@ -4,12 +4,14 @@ import { TextEditorComponent } from './text-editor.component';
 @Component({
   selector: 'app-root',
   template: `
-  <nav class='navbar navbar-expand navbar-light bg-light'>
+  <nav class='navbar navbar-expand-lg  navbar-dark bg-primary'>
   <a class='navbar-brand'>{{pageTitle}}</a>
   <ul class='nav nav-pills'>
-    <li><a class='nav-link' [routerLink]="['/home']">Home</a></li>
+    <li><a class='nav-link' [routerLink]="['/home']">Angular Showcase</a></li>
     <li><a class='nav-link' [routerLink]="['/people']">People</a></li>
-  </ul>
+    <li><a class='nav-link' [routerLink]="['/people-form']">Add person with Template form</a></li>
+    <li><a class='nav-link' [routerLink]="['/people']">Add person with Reactive form</a></li>
+ </ul>
 </nav>
   <div class='container'>
       <router-outlet></router-outlet>
